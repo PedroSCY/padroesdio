@@ -8,7 +8,7 @@ O projeto consiste em uma aplicação Java utilizando o framework Spring, que vi
 
 ## Estado Atual
 
-É importante notar que este projeto não está completo e nem todas as funcionalidades estão totalmente funcionais (Pra ser sincero, está estremamento cru em relação ao que eu quero fazer). Estou sempre que possivel trabalhando para melhorar e expandir o sistema.
+É importante notar que este projeto não está completo e nem todas as funcionalidades estão totalmente funcionais (Para ser sincero, está extremamente cru em relação ao que eu quero fazer). Estou sempre que possivel trabalhando para melhorar e expandir o sistema.
 
 ## Padrões de Projeto Utilizados
 
