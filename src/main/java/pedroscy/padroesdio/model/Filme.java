@@ -1,12 +1,17 @@
 package pedroscy.padroesdio.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-
-import java.util.Timer;
+import lombok.NoArgsConstructor;
+import pedroscy.padroesdio.model.enums.Classificacao;
 
 @Entity
 @Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Filme {
 
     @Id

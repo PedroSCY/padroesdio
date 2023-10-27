@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pedroscy.padroesdio.controller.dto.TicketRequest;
+import pedroscy.padroesdio.model.dto.TicketRequest;
 import pedroscy.padroesdio.facade.TicketFacede;
 import pedroscy.padroesdio.model.Ticket;
 

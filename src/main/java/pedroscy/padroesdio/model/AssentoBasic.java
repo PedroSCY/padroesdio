@@ -1,16 +1,26 @@
 package pedroscy.padroesdio.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.Entity;
+import lombok.*;
+import pedroscy.padroesdio.model.interfaces.AssentoInterface;
 import pedroscy.padroesdio.model.util.Assento;
 
 import java.math.BigDecimal;
 
+@EqualsAndHashCode(callSuper = true)
+@Entity
 @Data
-@AllArgsConstructor
-public class AssentoBasic extends Assento {
+@NoArgsConstructor
+public class AssentoBasic extends Assento implements AssentoInterface {
 
-    private BigDecimal preco;
+    public AssentoBasic(BigDecimal preco) {
+        super(preco);
+    }
 
+    @Override
+    public String InclinarAssento() {
+        String text = "Inclinando em 45º";
+        System.out.println(text);
+        return text;
+    }
 }

@@ -16,7 +16,7 @@ public class SessaoService {
     @Autowired
     private final SessaoRepository sessaoRepository;
 
-    public Sessao adicionarSessao(Sessao sessao) {
+    public Sessao criarSessao(Sessao sessao) {
         return sessaoRepository.save(sessao);
     }
 

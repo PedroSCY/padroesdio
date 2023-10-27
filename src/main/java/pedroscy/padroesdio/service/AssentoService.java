@@ -3,11 +3,14 @@ package pedroscy.padroesdio.service;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pedroscy.padroesdio.model.enums.TipoAssento;
 import pedroscy.padroesdio.model.interfaces.AssentoFactory;
 import pedroscy.padroesdio.model.util.Assento;
 import pedroscy.padroesdio.model.AssentoBasic;
 import pedroscy.padroesdio.model.AssentoPremium;
 import pedroscy.padroesdio.model.Sala;
+import pedroscy.padroesdio.model.util.AssentoBasicFactory;
+import pedroscy.padroesdio.model.util.AssentoPremiumFactory;
 import pedroscy.padroesdio.repository.AssentoRepository;
 
 import java.math.BigDecimal;
@@ -22,15 +25,16 @@ public class AssentoService {
     private final AssentoRepository assentoRepository;
 
     @Autowired
-    private final AssentoFactory assentoBasicFactory;
+    private final AssentoBasicFactory assentoBasicFactory;
 
     @Autowired
-    private final AssentoFactory assentoPremiumFactory;
+    private final AssentoPremiumFactory assentoPremiumFactory;
 
 
-    public Assento criarAssento(BigDecimal preco, Sala sala, boolean isPremium) {
-        Assento assento = isPremium ? assentoPremiumFactory.criarAssento(preco) : assentoBasicFactory.criarAssento(preco);
-        assento.setSala(sala);
+    public Assento criarAssento(BigDecimal preco, TipoAssento tipoAssento) {
+        Assento assento = tipoAssento == TipoAssento.PREMIUM ? assentoPremiumFactory.criarAssento(preco) : assentoBasicFactory.criarAssento(preco);
+        assento.setDisponivel(true);
+        assento.setTipoAssento(tipoAssento);
         return assentoRepository.save(assento);
     }
 

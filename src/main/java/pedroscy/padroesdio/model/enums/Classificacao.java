@@ -1,4 +1,5 @@
-package pedroscy.padroesdio.model;
+package pedroscy.padroesdio.model.enums;
+
 
 public enum Classificacao {
 

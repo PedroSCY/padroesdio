@@ -9,21 +9,21 @@ import pedroscy.padroesdio.repository.CinemaRepository;
 public class CinemaService {
 
     @Autowired
-    private CinemaRepository repository;
+    private CinemaRepository cinemaRepository;
 
     public void salvarCinema(Cinema cinema) {
-        repository.save(cinema);
+        cinemaRepository.save(cinema);
     }
     public Cinema recuperarCinema(){
-        return repository.findAll().get(0);
+        return cinemaRepository.findAll().get(0);
     }
 
     public boolean cinemaIsPresent(){
-        return !repository.findAll().isEmpty();
+        return !cinemaRepository.findAll().isEmpty();
     }
 
     public void deletarCinema(Cinema cinema){
-        repository.deleteById(cinema.getId());
+        cinemaRepository.deleteById(cinema.getId());
     }
 
 }

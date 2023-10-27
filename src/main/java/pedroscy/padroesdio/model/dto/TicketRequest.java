@@ -1,4 +1,4 @@
-package pedroscy.padroesdio.controller.dto;
+package pedroscy.padroesdio.model.dto;
 
 import lombok.Data;
 

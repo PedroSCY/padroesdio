@@ -39,6 +39,15 @@ public class UsuarioService {
         }
     }
 
+    public boolean verificarExistenciausuario(Usuario user){
+        for(Usuario u : listarUsuarios()){
+            if(user.equals(u)){
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void deletarUsuario(Long id) {
         usuarioRepository.deleteById(id);
     }
